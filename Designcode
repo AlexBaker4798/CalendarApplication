@@ -1,0 +1,223 @@
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class Form1
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
+        Me.lblGreeting = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtNotes = New System.Windows.Forms.TextBox()
+        Me.tmrSaves = New System.Windows.Forms.Timer(Me.components)
+        Me.lblTime = New System.Windows.Forms.Label()
+        Me.tmrTime = New System.Windows.Forms.Timer(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.More = New System.Windows.Forms.Label()
+        Me.grpExtension = New System.Windows.Forms.GroupBox()
+        Me.FontDialog1 = New System.Windows.Forms.FontDialog()
+        Me.grpExtension.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'MonthCalendar1
+        '
+        Me.MonthCalendar1.Location = New System.Drawing.Point(30, 432)
+        Me.MonthCalendar1.Name = "MonthCalendar1"
+        Me.MonthCalendar1.ShowTodayCircle = False
+        Me.MonthCalendar1.TabIndex = 0
+        '
+        'lblGreeting
+        '
+        Me.lblGreeting.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblGreeting.AutoSize = True
+        Me.lblGreeting.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGreeting.Location = New System.Drawing.Point(51, 9)
+        Me.lblGreeting.Name = "lblGreeting"
+        Me.lblGreeting.Size = New System.Drawing.Size(142, 24)
+        Me.lblGreeting.TabIndex = 1
+        Me.lblGreeting.Text = "Good Morning ."
+        Me.lblGreeting.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(95, 34)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(89, 20)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "The time is:"
+        '
+        'txtNotes
+        '
+        Me.txtNotes.Location = New System.Drawing.Point(30, 77)
+        Me.txtNotes.MaxLength = 32767444
+        Me.txtNotes.Multiline = True
+        Me.txtNotes.Name = "txtNotes"
+        Me.txtNotes.Size = New System.Drawing.Size(227, 336)
+        Me.txtNotes.TabIndex = 3
+        '
+        'tmrSaves
+        '
+        Me.tmrSaves.Enabled = True
+        Me.tmrSaves.Interval = 1000
+        '
+        'lblTime
+        '
+        Me.lblTime.AutoSize = True
+        Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTime.Location = New System.Drawing.Point(104, 54)
+        Me.lblTime.Name = "lblTime"
+        Me.lblTime.Size = New System.Drawing.Size(71, 20)
+        Me.lblTime.TabIndex = 4
+        Me.lblTime.Text = "00:00:00"
+        '
+        'tmrTime
+        '
+        Me.tmrTime.Enabled = True
+        Me.tmrTime.Interval = 10
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(14, 19)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(56, 23)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Theme"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(76, 19)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(104, 23)
+        Me.Button2.TabIndex = 6
+        Me.Button2.Text = "Speak"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(76, 47)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(105, 34)
+        Me.Button3.TabIndex = 7
+        Me.Button3.Text = "Messaging"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(14, 48)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(56, 34)
+        Me.Button4.TabIndex = 8
+        Me.Button4.Text = "Text Change"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(187, 19)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(54, 23)
+        Me.Button5.TabIndex = 9
+        Me.Button5.Text = "Emails"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(187, 48)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(54, 33)
+        Me.Button6.TabIndex = 10
+        Me.Button6.Text = "Search"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'More
+        '
+        Me.More.AutoSize = True
+        Me.More.Location = New System.Drawing.Point(138, 420)
+        Me.More.Name = "More"
+        Me.More.Size = New System.Drawing.Size(19, 13)
+        Me.More.TabIndex = 11
+        Me.More.Text = "↓"
+        '
+        'grpExtension
+        '
+        Me.grpExtension.Controls.Add(Me.Button1)
+        Me.grpExtension.Controls.Add(Me.Button3)
+        Me.grpExtension.Controls.Add(Me.Button6)
+        Me.grpExtension.Controls.Add(Me.Button2)
+        Me.grpExtension.Controls.Add(Me.Button4)
+        Me.grpExtension.Controls.Add(Me.Button5)
+        Me.grpExtension.Location = New System.Drawing.Point(12, 596)
+        Me.grpExtension.Name = "grpExtension"
+        Me.grpExtension.Size = New System.Drawing.Size(257, 94)
+        Me.grpExtension.TabIndex = 12
+        Me.grpExtension.TabStop = False
+        Me.grpExtension.Text = " [][][]~~[][][]"
+        '
+        'Form1
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.ClientSize = New System.Drawing.Size(292, 597)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.More)
+        Me.Controls.Add(Me.lblTime)
+        Me.Controls.Add(Me.txtNotes)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblGreeting)
+        Me.Controls.Add(Me.MonthCalendar1)
+        Me.Controls.Add(Me.grpExtension)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Location = New System.Drawing.Point(200, 230)
+        Me.Name = "Form1"
+        Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
+        Me.Text = "Form1"
+        Me.grpExtension.ResumeLayout(False)
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+    Friend WithEvents MonthCalendar1 As System.Windows.Forms.MonthCalendar
+    Friend WithEvents lblGreeting As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents txtNotes As System.Windows.Forms.TextBox
+    Friend WithEvents tmrSaves As System.Windows.Forms.Timer
+    Friend WithEvents lblTime As System.Windows.Forms.Label
+    Friend WithEvents tmrTime As System.Windows.Forms.Timer
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents tmrRemind As System.Windows.Forms.Timer
+    Friend WithEvents More As System.Windows.Forms.Label
+    Friend WithEvents grpExtension As System.Windows.Forms.GroupBox
+    Friend WithEvents FontDialog1 As FontDialog
+End Class
