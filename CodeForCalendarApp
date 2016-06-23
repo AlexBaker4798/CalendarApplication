@@ -1,0 +1,106 @@
+Public Class Form1
+    Dim WithEvents Ticker As New Timer
+    Dim drag As Boolean
+    Dim mousex As Integer
+    Dim mousey As Integer
+    Dim Alpha = CreateObject("sapi.spvoice")
+    Dim origSize As Size
+    Dim extSize As Size
+    Dim extend As Boolean
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        txtNotes.Text = My.Settings.Notes
+        FileOpen(1, "test.txt", OpenMode.Input)
+        Do While Not EOF(1)
+            txtNotes.Text &= LineInput(1)
+        Loop
+        FileClose(1)
+        origSize = Me.Size
+        extSize = origSize
+        extSize.Height += 100
+    End Sub
+    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
+        drag = True 'Sets the variable drag to true.
+        mousex = Windows.Forms.Cursor.Position.X - Me.Left 'Sets variable mousex
+        mousey = Windows.Forms.Cursor.Position.Y - Me.Top 'Sets variable mousey
+    End Sub
+    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
+        'If drag is set to true then move the form accordingly.
+        If drag Then
+            Me.Top = Windows.Forms.Cursor.Position.Y - mousey
+            Me.Left = Windows.Forms.Cursor.Position.X - mousex
+        End If
+    End Sub
+    Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseUp
+        drag = False 'Sets drag to false, so the form does not move according to the code in MouseMove
+    End Sub
+    Private Sub tmrSaves_Tick(sender As Object, e As EventArgs) Handles tmrSaves.Tick
+        FileOpen(1, "test.txt", OpenMode.Output)
+        PrintLine(1, txtNotes.Text)
+        FileClose(1)
+    End Sub
+    Private Sub tmrTime_Tick(sender As Object, e As EventArgs) Handles tmrTime.Tick
+        Dim name As String = My.User.Name
+        name = Mid(name, 9, name.Length)
+        For i = 1 To name.Length
+            If Mid(name, i, 1) = "." Then
+                Mid(name, i, 1) = " "
+            End If
+        Next
+        lblTime.Text = DateTime.Now.ToShortTimeString.ToString() & ":" & DateTime.Now.Second.ToString()
+       If DateTime.Now.ToShortTimeString.ToString >= "12:00:00" Then 'checks time to see if it is morning, afternoon, or evening
+            lblGreeting.Text = ("Good Afternoon " & name & ".")
+        ElseIf DateTime.Now.ToShortTimeString.ToString >= "16:30:00" Then
+            lblGreeting.Text = ("Good Evening " & name & ".")
+        ElseIf DateTime.Now.ToShortTimeString.ToString >= "00:00:00" Then
+            lblGreeting.Text = ("Good Morning " & name & ".")
+        End If
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click 'Page colour Changer
+        Dim MyDialog As New ColorDialog()
+        MyDialog.AllowFullOpen = False
+        MyDialog.ShowHelp = True
+        MyDialog.Color = Me.BackColor
+        If (MyDialog.ShowDialog() = Windows.Forms.DialogResult.OK) Then
+            Me.BackColor = MyDialog.Color
+        End If
+    End Sub
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click 'Messaging form. Ensure chat server is up before logging on
+        Form2.Show()
+    End Sub
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click 'Text colour changer
+        FontDialog1.ShowColor = True
+        FontDialog1.Font = txtNotes.Font
+        FontDialog1.Color = txtNotes.ForeColor
+        If FontDialog1.ShowDialog() <> DialogResult.Cancel Then
+            txtNotes.Font = FontDialog1.Font
+            txtNotes.ForeColor = FontDialog1.Color
+        End If
+    End Sub
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click 'Emails
+        Dim webAddress As String = "https://goo.gl/lIQVDU"
+        Process.Start(webAddress)
+    End Sub
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click 'Google
+        Dim webAddress As String = "https://goo.gl/1yLtgb"
+        Process.Start(webAddress)
+    End Sub
+
+    Private Sub More_Click(sender As Object, e As EventArgs) Handles More.Click
+        If extend = False Then
+            Me.Size = extSize
+            extend = True
+            More.Text = "↑"
+            grpExtension.Visible = True
+        Else
+            Me.Size = origSize
+            extend = False
+            More.Text = "↓"
+            grpExtension.Visible = False
+        End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Alpha.speak(txtNotes.Text)
+    End Sub
+End Class
